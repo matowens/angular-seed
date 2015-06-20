@@ -33,9 +33,10 @@ module.exports = function(grunt) {
             styles: {
 
                 src: [
-                    'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/ng-notify/src/styles/ng-notify.css',
                     'bower_components/nprogress/nprogress.css',
+                    'app/styles/normalize.css',
+                    'app/styles/main.css',
                     'app/styles/**/*.css',
                     '.tmp/**/*.sass'
                 ],
@@ -47,10 +48,8 @@ module.exports = function(grunt) {
             scripts: {
 
                 src: [
-                    'bower_components/jquery/dist/jquery.js',
-                    'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/angular/angular.js',
-                    'bower_components/angular-route/angular-route.js',
+                    'bower_components/angular-ui-router/release/angular-ui-router.js',
                     'bower_components/ng-notify/src/scripts/ng-notify.js',
                     'bower_components/nprogress/nprogress.js',
                     'app/scripts/plugins/**/*.js',
@@ -73,7 +72,8 @@ module.exports = function(grunt) {
 
             options: {
                 banner: '/* \n * <%= pkg.name %> - minify - <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> \n */',
-                stripBanners: true
+                stripBanners: true,
+                keepSpecialComments: 0
             },
 
             dist: {
@@ -181,7 +181,8 @@ module.exports = function(grunt) {
 
             options: {
                 banner: '/* \n * <%= pkg.name %> - uglify - <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> \n */\n',
-                stripBanners: true
+                stripBanners: true,
+                sourceMap: true
             },
 
             dist: {

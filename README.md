@@ -26,8 +26,6 @@ We're currently making use of the following:
 
 - HTML5 Boiler Plate
 - Angular
-- Angular Route
-- Bootstrap
-- jQuery
+- UI Router
 - ng-notify
 - nprogress

@@ -1,6 +1,6 @@
 (function() {
     'use strict';
 
-    angular.module('client', ['ngRoute', 'ngNotify']);
+    angular.module('client', ['ui.router', 'ngNotify']);
 
 })();

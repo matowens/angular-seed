@@ -2,24 +2,27 @@
     'use strict';
 
     angular.module('client').config([
-        '$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+
+        '$locationProvider','$stateProvider', '$urlRouterProvider',
+
+        function($locationProvider, $stateProvider, $urlRouterProvider) {
 
             $locationProvider.html5Mode(true).hashPrefix('!');
 
-            $routeProvider
+            $stateProvider
 
-            .when('/', {
+            .state('home', {
+                url: '/',
                 templateUrl: 'partials/home.html',
-                controller: 'home'
+                controller: 'home',
             })
 
-            .when('/404', {
+            .state('404', {
+                url: '/404',
                 templateUrl: 'partials/404.html'
-            })
-
-            .otherwise({
-                redirectTo: '/404'
             });
+
+            $urlRouterProvider.otherwise('/404');
         }
     ]);
 })();
